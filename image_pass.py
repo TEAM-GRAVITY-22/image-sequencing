@@ -1,3 +1,4 @@
+import random
 import tkinter as tk
 from turtle import width
 from PIL import Image,ImageTk
@@ -5,31 +6,31 @@ from setuptools import Command
 
 
 #encryptions
- def encryption():
-     from cryptography.fernet import Fernet
+# def encryption():
+#     from cryptography.fernet import Fernet
  
 
-     PASS = "GRAVITY"
- 
-
- 
-     key = Fernet.generate_key()
+#     PASS = "GRAVITY"
  
 
  
-     fernet = Fernet(key)
- 
-
-     encMessage = fernet.encrypt(PASS.encode())
+#     key = Fernet.generate_key()
  
 
  
+#     fernet = Fernet(key)
+ 
 
-     decMessage = fernet.decrypt(encMessage).decode()
+#     encMessage = fernet.encrypt(PASS.encode())
+ 
+
+ 
+
+#     decMessage = fernet.decrypt(encMessage).decode()
  
     
     
-     output.insert(0,("Your password is : "+decMessage))
+#     output.insert(0,("Your password is : "+decMessage))
 
 win = tk.Tk()
 
@@ -54,8 +55,8 @@ def cal():
     global pawd
     output.delete(0,tk.END)
     if (pawd[0]==2 and pawd[1]==1 and pawd[2]==3):
-        encryption()
-        
+        # encryption()
+        output.insert(0,("authorized"))
         pawd = []
     else:
         output.insert(0,("unauthorized"))
@@ -72,15 +73,27 @@ B2_image= ImageTk.PhotoImage(resized_image2)
 img3= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/pterodactyl.webp"))
 resized_image3= img3.resize((100,100))
 B3_image= ImageTk.PhotoImage(resized_image3)
-   
+
+a=random.randint(0,2)
+
+arrsuf=['N','W','E']
+var1 = arrsuf[a]
+arrsuf.remove(arrsuf[a])
+
+a=random.randint(0,1)
+var2 = arrsuf[a]
+arrsuf.remove(arrsuf[a])
+
+var3=arrsuf[0]
+
 Btn1 = tk.Button(win, image=B1_image, width=100, height=100,command=B1)
-Btn1.grid(row=0,sticky=tk.W)
+Btn1.grid(row=0,sticky=var1)
 
 Btn2 = tk.Button(win, image=B2_image, width=100, height=100,command=B2)
-Btn2.grid(row=0,sticky=tk.N)
+Btn2.grid(row=0,sticky=var2)
 
 Btn3 = tk.Button(win, image=B3_image, width=100, height=100,command=B3)
-Btn3.grid(row=0,sticky=tk.E)
+Btn3.grid(row=0,sticky=var3)
 
 Enter = tk.Button(win,text="Enter",width=2,height=1,command=cal)
 Enter.grid(row=1,column=0,sticky=tk.EW)
