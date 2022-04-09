@@ -6,31 +6,31 @@ from setuptools import Command
 
 
 #encryptions
-# def encryption():
-#     from cryptography.fernet import Fernet
+def encryption():
+    from cryptography.fernet import Fernet
  
 
-#     PASS = "GRAVITY"
- 
-
- 
-#     key = Fernet.generate_key()
+    PASS = "GRAVITY"
  
 
  
-#     fernet = Fernet(key)
- 
-
-#     encMessage = fernet.encrypt(PASS.encode())
+    key = Fernet.generate_key()
  
 
  
+    fernet = Fernet(key)
+ 
 
-#     decMessage = fernet.decrypt(encMessage).decode()
+    encMessage = fernet.encrypt(PASS.encode())
+ 
+
+ 
+
+    decMessage = fernet.decrypt(encMessage).decode()
  
     
     
-#     output.insert(0,("Your password is : "+decMessage))
+    output.insert(0,("Authenticated "+decMessage))
 
 win = tk.Tk()
 
@@ -54,23 +54,23 @@ def B3():
 def cal():
     global pawd
     output.delete(0,tk.END)
-    if (pawd[0]==2 and pawd[1]==1 and pawd[2]==3):
-        # encryption()
-        output.insert(0,("authorized"))
+    if (pawd[0]==1 and pawd[1]==2 and pawd[2]==3):
+        encryption()
+        # output.insert(0,("authorized"))
         pawd = []
     else:
         output.insert(0,("unauthorized"))
         pawd = []
 
-img1= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/triceratops.webp"))
+img1= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/flo.webp"))
 resized_image1= img1.resize((100,100))
 B1_image= ImageTk.PhotoImage(resized_image1)
 
-img2= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/trex.png"))
+img2= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/house.png"))
 resized_image2= img2.resize((100,100))
 B2_image= ImageTk.PhotoImage(resized_image2)
 
-img3= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/pterodactyl.webp"))
+img3= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/dianosor.webp"))
 resized_image3= img3.resize((100,100))
 B3_image= ImageTk.PhotoImage(resized_image3)
 
