@@ -62,15 +62,15 @@ def cal():
         output.insert(0,("unauthorized"))
         pawd = []
 
-img1= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/flo.webp"))
+img1= (Image.open("img/flo.webp"))
 resized_image1= img1.resize((100,100))
 B1_image= ImageTk.PhotoImage(resized_image1)
 
-img2= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/house.png"))
+img2= (Image.open("img/house.png"))
 resized_image2= img2.resize((100,100))
 B2_image= ImageTk.PhotoImage(resized_image2)
 
-img3= (Image.open("/home/atanu/Downloads/hackathon_22/image_auth/img/dianosor.webp"))
+img3= (Image.open("img/dianosor.webp"))
 resized_image3= img3.resize((100,100))
 B3_image= ImageTk.PhotoImage(resized_image3)
 
